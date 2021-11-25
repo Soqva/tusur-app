@@ -1,7 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
+nnimport { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-// ss
+// test artem
 export default function App() {
   return (
     <View style={styles.container}>
