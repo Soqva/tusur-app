@@ -5,7 +5,7 @@ export const Categories = () => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text>fsdfs</Text>
+                <Text>fss</Text>
             </View>
             <View>
                 <Text>sdsa</Text>
