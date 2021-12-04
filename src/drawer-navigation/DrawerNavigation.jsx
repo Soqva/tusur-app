@@ -5,6 +5,7 @@ import {HomeScreen} from "./navigation-test-screens/HomeScreen";
 import {NotificationsScreen} from "./navigation-test-screens/NotificationsScreen";
 import {getHeaderTitle} from "@react-navigation/elements";
 import {Header} from "./navigation-test-screens/Header";
+import {RegistrationPage} from "./registration/registrationPage";
 
 const Drawer = createDrawerNavigator();
 
@@ -22,10 +23,10 @@ export const DrawerNavigation = () => {
                         backgroundColor: "white"
                     },
                     headerStyle: {
-                        height: 80,
+                        height: 0,
                         justifyContent: "center",
                         alignItems: "center",
-                        backgroundColor: "aqua"
+                        backgroundColor: "aqua",
                     },
                     header: ({route, options}) => {
                         const title = getHeaderTitle(options, route.name);
@@ -36,6 +37,7 @@ export const DrawerNavigation = () => {
                 backBehavior="history">
                 <Drawer.Screen name="Home" component={HomeScreen}/>
                 <Drawer.Screen name="Notifications" component={NotificationsScreen}/>
+                <Drawer.Screen name="Registration" component={RegistrationPage}/>
             </Drawer.Navigator>
         </NavigationContainer>
     );
