@@ -9,7 +9,7 @@ export function Login(){
             <View style={styles.avatarContainer}>
                 <Image
                     style={styles.avatar}
-                    source={require("../Avatar.png")}
+                    source={require("../../../assets/Avatar.png")}
                 />
             </View>
 

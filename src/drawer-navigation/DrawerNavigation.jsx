@@ -6,6 +6,8 @@ import {NotificationsScreen} from "./navigation-test-screens/NotificationsScreen
 import {getHeaderTitle} from "@react-navigation/elements";
 import {Header} from "./navigation-test-screens/Header";
 import {RegistrationPage} from "./registration/registrationPage";
+import {AppHeader} from "./AppHeader";
+import {SelectionMenu} from "./SelectionMenu";
 
 const Drawer = createDrawerNavigator();
 
