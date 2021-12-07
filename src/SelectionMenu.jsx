@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, Button} from "react-native";
-import dataAreas from "../data/AreasData";
-import dataTech from "../data/TechnologiesData";
-import dataQuestions from "../data/QuestionsData";
+import dataAreas from "./data/AreasData";
+import dataTech from "./data/TechnologiesData";
+import dataQuestions from "./data/QuestionsData";
 import {AppHeader} from "./AppHeader";
 
 export const SelectionMenu = (props) => {
 
-    const arrowIcon = require('../../assets/arrow.png');
-    const arrowIconBright = require('../../assets/arrowBright.png');
+    const arrowIcon = require('../assets/arrow.png');
+    const arrowIconBright = require('../assets/arrowBright.png');
     const [currentIndex, setCurrentIndex] = React.useState(null);
     const [active, setActive] = React.useState(false);
     const mainColor = '#4285F4';

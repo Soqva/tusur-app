@@ -2,13 +2,13 @@ import React from 'react';
 import {View, Image, Text, TextInput,Animated, TouchableOpacity, StyleSheet} from "react-native";
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
-export const RegistrationPage = ({navigation}) => {
+export const RegistrationScreen = ({navigation}) => {
     return (
         <View style={styles.wrapper}>
             <View style={styles.avatarContainer}>
                 <Image
                     style={styles.avatar}
-                    source={require("../../../assets/Avatar.png")}
+                    source={require("../../assets/Avatar.png")}
                 />
             </View>
             <View>
@@ -16,7 +16,7 @@ export const RegistrationPage = ({navigation}) => {
                 <TextInput style={styles.textField} placeholder="Почта"/>
                 <TextInput style={styles.textField} placeholder="Пароль"/>
                 <TextInput style={styles.textField} placeholder="Повторите пароль"/>
-                <AnimatedTouchable style={styles.button} onPress={() => navigation.navigate('Home')}>
+                <AnimatedTouchable style={styles.button} onPress={() => navigation.navigate("DrawerNavigationRoutes")}>
                     <Text style={styles.text}>ОК</Text>
                 </AnimatedTouchable>
             </View>

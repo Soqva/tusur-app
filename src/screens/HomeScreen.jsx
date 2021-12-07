@@ -1,13 +1,10 @@
 import React from 'react';
-import {Button, View, StyleSheet} from "react-native";
+import {StyleSheet, View, Text} from "react-native";
 
-export const NotificationsScreen = ({navigation}) => {
+export const HomeScreen = ({navigation}) => {
     return (
         <View style={styles.button}>
-            <Button
-                onPress={() => navigation.navigate("Home")}
-                title="Go back home"
-            />
+            <Text>This is a home screen</Text>
         </View>
     );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, View} from "react-native";
+import {StyleSheet, View} from "react-native";
 import {Image} from "react-native";
 
 export const AppHeader = () => {
     return (
         <View style={styles.header}>
             <Image
-                source={require('../../assets/menu.png')}
+                source={require('../assets/menu.png')}
                 style={styles.menuBurger}
             />
         </View>

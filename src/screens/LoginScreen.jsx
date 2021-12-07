@@ -1,15 +1,15 @@
 import React from 'react';
-import {Alert, Button, Image, StyleSheet, Text, View, TextInput, Animated, TouchableOpacity} from 'react-native';
+import {Alert, Image, StyleSheet, Text, View, TextInput, Animated, TouchableOpacity} from 'react-native';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
-export function Login(){
+export function LoginScreen({navigation}){
     return(
         <View style={styles.wrapper}>
             <View style={styles.avatarContainer}>
                 <Image
                     style={styles.avatar}
-                    source={require("../../../assets/Avatar.png")}
+                    source={require("../../assets/Avatar.png")}
                 />
             </View>
 
@@ -42,7 +42,7 @@ export function Login(){
                     <Text style={{color: '#000000'}}>Войти через ТУСУР</Text>
                 </AnimatedTouchable>
 
-                <AnimatedTouchable style={styles.buttonRegistration} onPress={() => Alert.alert('Registration')}>
+                <AnimatedTouchable style={styles.buttonRegistration} onPress={() => navigation.navigate("RegisterScreen")}>
                     <Text style={styles.text}>Регистрация</Text>
                 </AnimatedTouchable>
             </View>
