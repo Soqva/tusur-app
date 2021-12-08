@@ -1,24 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet} from 'react-native';
 import {DrawerNavigation} from "./src/drawer-navigation/DrawerNavigation";
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from "@react-navigation/native";
+import {AuthStackNavigation} from "./src/stack-navigation/AuthStackNavigation";
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  return (
-      <DrawerNavigation>
-        <View style={styles.container}>
-          <Text>Open up App.js to start working on your</Text>
-          <StatusBar style="auto" />
-        </View>
-      </DrawerNavigation>
-  );
+    return (
+        <NavigationContainer>
+            <Stack.Navigator
+                initialRouteName="AuthStackNavigation"
+                screenOptions={appStackNavigatorScreenOptions}>
+                <Stack.Screen name="Auth" component={AuthStackNavigation}/>
+                <Stack.Screen name="DrawerNavigationRoutes" component={DrawerNavigation}/>
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
+
+const appStackNavigatorScreenOptions = {
+    headerShown: false,
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
