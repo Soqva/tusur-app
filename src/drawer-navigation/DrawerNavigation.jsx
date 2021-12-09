@@ -2,6 +2,7 @@ import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {HomeScreen} from "../screens/HomeScreen";
 import {NotificationsScreen} from "../screens/NotificationsScreen";
+import {SelectionMenu} from "../SelectionMenu";
 
 const Drawer = createDrawerNavigator();
 
@@ -13,7 +14,7 @@ export const DrawerNavigation = () => {
             backBehavior="history">
             <Drawer.Screen
                 name="HomeScreen"
-                component={HomeScreen}/>
+                component={SelectionMenu}/>
             <Drawer.Screen
                 name="NotificationsScreen"
                 component={NotificationsScreen}/>
@@ -30,5 +31,5 @@ const drawerNavigatorScreenOptions = {
     drawerContentContainerStyle: {
         backgroundColor: "white"
     },
-    headerShown: true,
+    headerShown: false,
 }
