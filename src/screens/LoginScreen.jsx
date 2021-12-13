@@ -9,7 +9,7 @@ export function LoginScreen({navigation}){
             <View style={styles.avatarContainer}>
                 <Image
                     style={styles.avatar}
-                    source={require("../../assets/Avatar.png")}
+                    source={require("../assets/Avatar.png")}
                 />
             </View>
 

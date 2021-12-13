@@ -8,35 +8,18 @@ import {
     TouchableOpacity,
     Button,
 } from "react-native";
-import dataAreas from "./data/AreasData";
-import dataTech from "./data/TechnologiesData";
-import dataQuestions from "./data/QuestionsData";
 import {AppHeader} from "./AppHeader";
-import {Touchable} from "react-native-web";
-import arrowIconBright from "../assets/arrowBright.png";
-import arrowIcon from "../assets/arrow.png";
+import dataQuestions from "../data/QuestionsData";
 
-export const SelectionMenu = ({navigation, ...props}) => {
+export const TechnologiesScreen = ({navigation, route}) => {
 
-    const arrowIcon = require('../assets/arrow.png');
+    const arrowIcon = require("../assets/arrow.png");
     const arrowIconBright = require('../assets/arrowBright.png');
     const [currentIndex, setCurrentIndex] = React.useState(null);
     const [active, setActive] = React.useState(false);
     const mainColor = '#4285F4';
 
-    let data;
-
-   /* switch (props.page) {
-        case 'Areas':
-            data = dataAreas;
-            break;
-        case 'Tech':
-            data = dataTech;
-            break;
-        case 'Questions':
-            data = dataQuestions;
-            break;
-    }*/
+    let data = route.params.data;
 
     return (
         <View style={styles.container}>
@@ -74,49 +57,38 @@ export const SelectionMenu = ({navigation, ...props}) => {
                             {index === currentIndex &&
                             (<View>
                                     {subListElement.map(subListElement => (
-                                        /*props.page === 'Questions' ?
-                                            <View style={styles.questionsSubListElement}>
-                                                <Text key={subListElement} style={styles.questionsSubListText}>
-                                                    {subListElement}
-                                                </Text>
-                                                <Button
-                                                    style={styles.subListButton}
-                                                    title="Перейти к ответу"
-                                                    color={mainColor}
-                                                />
-                                            </View>
-                                            :*/
-                                            <View style={styles.subListElement}>
+                                        <View style={styles.subListElement}>
 
-                                                <TouchableOpacity
-                                                    key={subListElement}
-                                                    activeOpacity={0.8}
-                                                    onPress={
-                                                        () => {
-                                                            navigation.navigate("NotificationsScreen", {page:"Tech"});
+                                            <TouchableOpacity
+                                                key={subListElement}
+                                                activeOpacity={0.8}
+                                                onPress={() => {
+                                                    navigation.navigate("QuestionsScreen", {
+                                                        data: dataQuestions,
+                                                    });
+                                                }
+                                                }
+                                            >
+                                                <View style={styles.listElement}>
+                                                    <Text key={subListElement} style={styles.subListText}>
+                                                        {subListElement}
+                                                    </Text>
+                                                    <View>
+                                                        {active ?
+                                                            <Image
+                                                                style={styles.listIcon}
+                                                                source={arrowIconBright}
+                                                            />
+                                                            :
+                                                            <Image
+                                                                style={styles.listIcon}
+                                                                source={arrowIcon}
+                                                            />
                                                         }
-                                                    }
-                                                >
-                                                    <View style={styles.listElement}>
-                                                        <Text key={subListElement} style={styles.subListText}>
-                                                            {subListElement}
-                                                        </Text>
-                                                        <View>
-                                                            {active ?
-                                                                <Image
-                                                                    style={styles.listIcon}
-                                                                    source={arrowIconBright}
-                                                                />
-                                                                :
-                                                                <Image
-                                                                    style={styles.listIcon}
-                                                                    source={arrowIcon}
-                                                                />
-                                                            }
-                                                        </View>
                                                     </View>
-                                                </TouchableOpacity>
-                                            </View>
+                                                </View>
+                                            </TouchableOpacity>
+                                        </View>
                                     ))}
                                 </View>
                             )}

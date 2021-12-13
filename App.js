@@ -1,9 +1,10 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import {DrawerNavigation} from "./src/drawer-navigation/DrawerNavigation";
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from "@react-navigation/native";
 import {AuthStackNavigation} from "./src/stack-navigation/AuthStackNavigation";
+import {DataStackNavigation} from "./src/stack-navigation/DataStackNavigation";
+import {DrawerNavigation} from "./src/drawer-navigation/DrawerNavigation";
 
 const Stack = createStackNavigator();
 
@@ -13,8 +14,12 @@ export default function App() {
             <Stack.Navigator
                 initialRouteName="AuthStackNavigation"
                 screenOptions={appStackNavigatorScreenOptions}>
-                <Stack.Screen name="Auth" component={AuthStackNavigation}/>
-                <Stack.Screen name="DrawerNavigationRoutes" component={DrawerNavigation}/>
+                <Stack.Screen
+                    name="Auth"
+                    component={AuthStackNavigation}/>
+                <Stack.Screen
+                    name="DrawerNavigationRoutes"
+                    component={DrawerNavigation}/>
             </Stack.Navigator>
         </NavigationContainer>
     );

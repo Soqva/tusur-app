@@ -8,7 +8,7 @@ export const RegistrationScreen = ({navigation}) => {
             <View style={styles.avatarContainer}>
                 <Image
                     style={styles.avatar}
-                    source={require("../../assets/Avatar.png")}
+                    source={require("../assets/Avatar.png")}
                 />
             </View>
             <View>
@@ -16,7 +16,10 @@ export const RegistrationScreen = ({navigation}) => {
                 <TextInput style={styles.textField} placeholder="Почта"/>
                 <TextInput style={styles.textField} placeholder="Пароль"/>
                 <TextInput style={styles.textField} placeholder="Повторите пароль"/>
-                <AnimatedTouchable style={styles.button} onPress={() => navigation.navigate("DrawerNavigationRoutes")}>
+                <AnimatedTouchable style={styles.button} onPress={() => navigation.reset({
+                    index: 0,
+                    routes: [{name: 'DrawerNavigationRoutes'}]
+                })}>
                     <Text style={styles.text}>ОК</Text>
                 </AnimatedTouchable>
             </View>
