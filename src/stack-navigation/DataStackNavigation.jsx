@@ -2,7 +2,6 @@ import React from 'react';
 import {AreasScreen} from "../screens/AreasScreen";
 import {TechnologiesScreen} from "../screens/TechnologiesScreen";
 import {QuestionsScreen} from "../screens/QuestionsScreen";
-import {DrawerNavigation} from "../drawer-navigation/DrawerNavigation";
 
 const {createStackNavigator} = require("@react-navigation/stack");
 
@@ -20,15 +19,18 @@ export const DataStackNavigation = () => {
             <Stack.Screen
                 name="TechnologiesScreen"
                 component={TechnologiesScreen}
+                options={{gestureEnabled: true}}
             />
             <Stack.Screen
                 name="QuestionsScreen"
                 component={QuestionsScreen}
+                options={{gestureEnabled: true}}
             />
         </Stack.Navigator>
     );
 };
 
 const DataStackNavigatorScreenOptions = {
-    headerShown: true,
+    headerShown: false,
 }
+

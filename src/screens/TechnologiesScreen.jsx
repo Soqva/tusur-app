@@ -23,7 +23,7 @@ export const TechnologiesScreen = ({navigation, route}) => {
 
     return (
         <View style={styles.container}>
-            <AppHeader/>
+            <AppHeader navigation={navigation}/>
             <ScrollView>
                 {data.map(({listElement, subListElement}, index) => {
                     return <View style={styles.list}>

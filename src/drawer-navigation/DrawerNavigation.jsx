@@ -1,10 +1,6 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {AreasScreen} from "../screens/AreasScreen";
-import {TechnologiesScreen} from "../screens/TechnologiesScreen";
-import {QuestionsScreen} from "../screens/QuestionsScreen";
 import {DataStackNavigation} from "../stack-navigation/DataStackNavigation";
-import {LoginScreen} from "../screens/LoginScreen";
 import {ProfileScreen} from "../screens/ProfileScreen";
 import {FavoritesScreen} from "../screens/FavoritesScreen";
 import {NotificationsScreen} from "../screens/NotificationsScreen";
@@ -17,7 +13,7 @@ export const DrawerNavigation = () => {
     return (
         <Drawer.Navigator
             screenOptions={drawerNavigatorScreenOptions}
-            initialRouteName="AreasScreen"
+            initialRouteName="Tasks"
             backBehavior="history">
             <Drawer.Screen
                 name="Profile"

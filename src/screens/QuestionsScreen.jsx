@@ -23,7 +23,7 @@ export const QuestionsScreen = ({route, navigation}) => {
 
     return (
         <View style={styles.container}>
-            <AppHeader/>
+            <AppHeader navigation={navigation}/>
             <ScrollView>
                 {data.map(({listElement, subListElement}, index) => {
                     return <View style={styles.list}>
