@@ -1,6 +1,9 @@
 export default [
     {
-        listElement: 'C#',
+        listElement: 'Swift',
+    },
+    {
+        listElement: 'Objective-C',
     },
     {
         listElement: 'Общие вопросы',

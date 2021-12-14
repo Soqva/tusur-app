@@ -5,10 +5,10 @@ import {
     View,
 } from "react-native";
 
-export const NotificationsScreen = () => {
+export const ProfileScreen = () => {
     return (
         <View style={styles.content}>
-            <Text style={styles.text}>This is your notifications</Text>
+            <Text style={styles.text}>This is your profile</Text>
         </View>
     );
 }

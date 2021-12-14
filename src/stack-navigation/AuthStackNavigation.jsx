@@ -24,5 +24,5 @@ export const AuthStackNavigation = () => {
 };
 
 const authStackNavigatorScreenOptions = {
-    headerShown: true,
+    headerShown: false,
 }

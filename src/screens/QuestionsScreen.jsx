@@ -1,36 +1,29 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, Button} from "react-native";
-import dataAreas from "./data/AreasData";
-import dataTech from "./data/TechnologiesData";
-import dataQuestions from "./data/QuestionsData";
+import {
+    StyleSheet,
+    Text,
+    View,
+    ScrollView,
+    Image,
+    TouchableOpacity,
+    Button,
+} from "react-native";
 import {AppHeader} from "./AppHeader";
+import dataQuestions from "../data/QuestionsData";
 
-export const SelectionMenu = (props) => {
+export const QuestionsScreen = ({route, navigation}) => {
 
-    const arrowIcon = require('../assets/arrow.png');
+    const arrowIcon = require("../assets/arrow.png");
     const arrowIconBright = require('../assets/arrowBright.png');
     const [currentIndex, setCurrentIndex] = React.useState(null);
     const [active, setActive] = React.useState(false);
     const mainColor = '#4285F4';
 
-    let data;
-
-    switch (props.page)
-    {
-        case 'Areas':
-            data = dataAreas;
-            break;
-        case 'Tech':
-            data = dataTech;
-            break;
-        case 'Questions':
-            data = dataQuestions;
-            break;
-    }
+    let data = route.params.data;
 
     return (
         <View style={styles.container}>
-            <AppHeader />
+            <AppHeader/>
             <ScrollView>
                 {data.map(({listElement, subListElement}, index) => {
                     return <View style={styles.list}>
@@ -40,7 +33,7 @@ export const SelectionMenu = (props) => {
                                 key={listElement}
                                 onPress={() => {
                                     setCurrentIndex(index === currentIndex ? null : index);
-                                    setActive(active === false? true : false);
+                                    setActive(!active);
                                 }}
                                 activeOpacity={0.8}
                             >
@@ -48,7 +41,7 @@ export const SelectionMenu = (props) => {
                                     {listElement}
                                 </Text>
                                 <View>
-                                    {active == true?
+                                    {active ?
                                         <Image
                                             style={styles.listIcon}
                                             source={arrowIconBright}
@@ -64,38 +57,38 @@ export const SelectionMenu = (props) => {
                             {index === currentIndex &&
                             (<View>
                                     {subListElement.map(subListElement => (
-                                        props.page === 'Questions'?
-                                            <View style={styles.questionsSubListElement}>
-                                                <Text key={subListElement} style={styles.questionsSubListText}>
-                                                    {subListElement}
-                                                </Text>
-                                                <Button
-                                                    style={styles.subListButton}
-                                                    title="Перейти к ответу"
-                                                    color={mainColor}
-                                                />
-                                            </View>
-                                            :
-                                            <View  style={styles.subListElement}>
+                                        <View style={styles.subListElement}>
+
+                                            <TouchableOpacity
+                                                key={subListElement}
+                                                activeOpacity={0.8}
+                                                onPress={() => {
+                                                    navigation.navigate("NotificationsScreen", {
+                                                        data: dataQuestions,
+                                                    });
+                                                }
+                                                }
+                                            >
                                                 <View style={styles.listElement}>
                                                     <Text key={subListElement} style={styles.subListText}>
                                                         {subListElement}
                                                     </Text>
                                                     <View>
-                                                        {active == true?
+                                                        {active ?
                                                             <Image
                                                                 style={styles.listIcon}
                                                                 source={arrowIconBright}
                                                             />
                                                             :
                                                             <Image
-                                                            style={styles.listIcon}
-                                                            source={arrowIcon}
+                                                                style={styles.listIcon}
+                                                                source={arrowIcon}
                                                             />
                                                         }
                                                     </View>
                                                 </View>
-                                            </View>
+                                            </TouchableOpacity>
+                                        </View>
                                     ))}
                                 </View>
                             )}
@@ -146,11 +139,9 @@ const styles = StyleSheet.create({
         marginLeft: 29,
     },
     subListText: {
-        width: 335-29,
+        width: 335 - 29,
     },
-    questionsSubListElement: {
-
-    },
+    questionsSubListElement: {},
     questionsSubListText: {
         marginTop: '5%',
         marginLeft: '5%',
