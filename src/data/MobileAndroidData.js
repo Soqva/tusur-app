@@ -6,6 +6,6 @@ export default [
         listElement: 'Kotlin',
     },
     {
-        listElement: 'Общие вопросы',
+        listElement: 'Общие вопросы  ',
     }
 ]

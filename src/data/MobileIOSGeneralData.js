@@ -7,7 +7,7 @@ export default [
     },
     {
         listElement: 'Цикл жизни приложения',
-        subListElement: 'Каков цикл жизни приложения?',
+        subListElement: ['Каков цикл жизни приложения?'],
         answer: 'Не запущено: приложение не запускалось или было завершено системой.\n' +
             '\n' +
             'Не активно: приложение запущено, но в данный момент не реагирует на события (Но может выполнять код). Обычно это состояние длится не долго и является промежуточным.\n' +
@@ -20,12 +20,12 @@ export default [
     },
     {
         listElement: 'UIStackView',
-        subListElement: 'Что такое UIStackView?',
+        subListElement: ['Что такое UIStackView?'],
         answer: 'UIStackView – контейнер для UIView. В него мы помещаем выстраивающиеся в виде стека горизонтально или вертикально UIView. Выкладываться они будут автоматически в соответствии с доступным пространством, которое определяется через настройки: alignment, distribution, spacing.'
     },
     {
         listElement: 'ViewController',
-        subListElement: 'Каков жизненный цикл ViewController?',
+        subListElement: ['Каков жизненный цикл ViewController?'],
         answer: 'loadView: используется когда контроллер создаётся в коде. loadView вызывается контроллером, когда его текущий view равен nil.\n' +
             '\n' +
             'viewDidLoad: вызывается один раз за жизнь контроллера. Метод отрабатывает когда все view загружены.\n' +
@@ -38,7 +38,7 @@ export default [
     },
     {
         listElement: 'Point и Pixel',
-        subListElement: 'В чем заключается разница между Point (pt) и Pixel (px)?',
+        subListElement: ['В чем заключается разница между Point (pt) и Pixel (px)?'],
         answer: 'Pixels (px) — точки на экране, points (pt) — плотность точек на экране.'
     },
 ]

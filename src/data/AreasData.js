@@ -19,6 +19,7 @@ export default [
         subListElement: [
             'Unity 3D Разработка',
             'Unreal Engine 4 Разработка',
+            'Компьютерная графика',
         ],
     },
     {

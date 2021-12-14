@@ -3,6 +3,6 @@ export default [
         listElement: 'C#',
     },
     {
-        listElement: 'Общие вопросы',
+        listElement: 'Общие вопросы ',
     },
 ]
