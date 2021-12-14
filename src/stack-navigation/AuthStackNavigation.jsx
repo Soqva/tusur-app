@@ -18,6 +18,7 @@ export const AuthStackNavigation = () => {
             <Stack.Screen
                 name="RegisterScreen"
                 component={RegistrationScreen}
+                options={{gestureEnabled: true}}
             />
         </Stack.Navigator>
     );

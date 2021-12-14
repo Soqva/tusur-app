@@ -9,10 +9,8 @@ import {
     Button,
 } from "react-native";
 import dataAreas from "../data/AreasData";
-import dataTech from "../data/TechnologiesData";
 import {AppHeader} from "./AppHeader";
-import MobileAndroidData from "../data/MobileAndriodData";
-import MobileCrossPlatformData from "../data/MobileCrossPlatformData";
+import MobileAndroidData from "../data/MobileAndroidData";
 import MobileIOSData from "../data/MobileIOSData";
 import BigDataDataEngineerData from "../data/BigDataDataEngineerData";
 import BigDataDataScientistData from "../data/BigDataDataScientistData";
@@ -32,7 +30,7 @@ export const AreasScreen = ({navigation}) => {
 
     return (
         <View style={styles.container}>
-            <AppHeader/>
+            <AppHeader navigation={navigation}/>
             <ScrollView>
                 {data.map(({listElement, subListElement}, index) => {
                     return <View style={styles.list}>
@@ -75,19 +73,19 @@ export const AreasScreen = ({navigation}) => {
                                                     switch (subListElement) {
                                                         case 'Front End':
                                                             navigation.navigate("TechnologiesScreen", {
-                                                                data: dataTech,
+                                                                data: MobileAndroidData,
                                                                 },
                                                             );
                                                             break;
                                                         case 'Back End':
                                                             navigation.navigate("TechnologiesScreen", {
-                                                                data: dataTech,
+                                                                data: MobileAndroidData,
                                                                 },
                                                             );
                                                             break;
                                                         case 'Full Stack':
                                                             navigation.navigate("TechnologiesScreen", {
-                                                                data: dataTech,
+                                                                data: MobileAndroidData,
                                                                 },
                                                             );
                                                             break;
@@ -100,12 +98,6 @@ export const AreasScreen = ({navigation}) => {
                                                         case 'IOS Разработка':
                                                             navigation.navigate("TechnologiesScreen", {
                                                                 data: MobileIOSData,
-                                                                },
-                                                            );
-                                                            break;
-                                                        case 'Кроссплатформерная разработка':
-                                                            navigation.navigate("TechnologiesScreen", {
-                                                                data: MobileCrossPlatformData,
                                                                 },
                                                             );
                                                             break;
@@ -130,6 +122,12 @@ export const AreasScreen = ({navigation}) => {
                                                         case 'Unreal Engine 4 Разработка':
                                                             navigation.navigate("TechnologiesScreen", {
                                                                 data: GameDevUE4Data,
+                                                                },
+                                                            );
+                                                            break;
+                                                        case 'Компьютерная графика':
+                                                            navigation.navigate("TechnologiesScreen", {
+                                                                data: GameDevComputerGraphicsData,
                                                                 },
                                                             );
                                                             break;

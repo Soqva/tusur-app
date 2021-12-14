@@ -1,22 +1,27 @@
 export default [
     {
-        listElement: 'List и MutableList',
-        subListElement: 'В чем разница между List и MutableList?',
+        listElement: '',
+        subListElement: '',
+        answer: ''
     },
     {
         listElement: '',
         subListElement: '',
+        answer: ''
     },
     {
         listElement: '',
         subListElement: '',
+        answer: ''
     },
     {
         listElement: '',
         subListElement: '',
+        answer: ''
     },
     {
         listElement: '',
         subListElement: '',
+        answer: ''
     },
 ]

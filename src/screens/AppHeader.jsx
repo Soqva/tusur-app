@@ -2,12 +2,15 @@ import React from 'react';
 import {StyleSheet, View, TouchableOpacity} from "react-native";
 import {Image} from "react-native";
 
-export const AppHeader = () => {
+export const AppHeader = ({navigation}) => {
     return (
         <View
             style={styles.header}
         >
-            <TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => {
+                    navigation.openDrawer();
+                }}>
                 <Image
                     source={require('../assets/menu.png')}
                     style={styles.menuBurger}

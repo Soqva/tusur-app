@@ -1,23 +1,21 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {AreasScreen} from "../screens/AreasScreen";
-import {TechnologiesScreen} from "../screens/TechnologiesScreen";
-import {QuestionsScreen} from "../screens/QuestionsScreen";
 import {DataStackNavigation} from "../stack-navigation/DataStackNavigation";
-import {LoginScreen} from "../screens/LoginScreen";
 import {ProfileScreen} from "../screens/ProfileScreen";
 import {FavoritesScreen} from "../screens/FavoritesScreen";
 import {NotificationsScreen} from "../screens/NotificationsScreen";
 import {ShareScreen} from "../screens/ShareScreen";
 import {SettingsScreen} from "../screens/SettingsScreen";
+import  {CustomDrawerContent} from "./CustomDrawerContent";
 
 const Drawer = createDrawerNavigator();
 
 export const DrawerNavigation = () => {
     return (
         <Drawer.Navigator
+            drawerContent={(props) => <CustomDrawerContent {...props}/>}
             screenOptions={drawerNavigatorScreenOptions}
-            initialRouteName="AreasScreen"
+            initialRouteName="Tasks"
             backBehavior="history">
             <Drawer.Screen
                 name="Profile"
@@ -50,11 +48,10 @@ export const DrawerNavigation = () => {
 const drawerNavigatorScreenOptions = {
     drawerType: "front",
     drawerStyle: {
-        backgroundColor: "aqua",
-        width: 240,
-    },
-    drawerContentContainerStyle: {
-        backgroundColor: "white"
+        backgroundColor: "#4285F4",
+        width: 270,
     },
     headerShown: false,
 }
+
+

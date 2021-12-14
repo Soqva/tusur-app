@@ -6,6 +6,6 @@ export default [
         listElement: 'Objective-C',
     },
     {
-        listElement: 'Общие вопросы',
+        listElement: 'Общие вопросы   ',
     },
 ]

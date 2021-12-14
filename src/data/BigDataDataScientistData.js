@@ -1,9 +1,9 @@
 export default [
     {
-        listElement: 'Python',
+        listElement: 'Python ',
     },
     {
-        listElement: 'Handoop / Spark / etc',
+        listElement: 'Hadoop / Spark / etc ',
     },
     {
         listElement: 'Machine Learning',
