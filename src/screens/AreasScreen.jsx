@@ -11,6 +11,14 @@ import {
 import dataAreas from "../data/AreasData";
 import dataTech from "../data/TechnologiesData";
 import {AppHeader} from "./AppHeader";
+import MobileAndroidData from "../data/MobileAndriodData";
+import MobileCrossPlatformData from "../data/MobileCrossPlatformData";
+import MobileIOSData from "../data/MobileIOSData";
+import BigDataDataEngineerData from "../data/BigDataDataEngineerData";
+import BigDataDataScientistData from "../data/BigDataDataScientistData";
+import GameDevComputerGraphicsData from "../data/GameDevComputerGraphicsData";
+import GameDevUnityData from "../data/GameDevUnityData";
+import GameDevUE4Data from "../data/GameDevUE4Data";
 
 export const AreasScreen = ({navigation}) => {
 
@@ -64,11 +72,67 @@ export const AreasScreen = ({navigation}) => {
                                                 key={subListElement}
                                                 activeOpacity={0.8}
                                                 onPress={() => {
-                                                    if (subListElement === 'Front End') {
-                                                        navigation.navigate("TechnologiesScreen", {
+                                                    switch (subListElement) {
+                                                        case 'Front End':
+                                                            navigation.navigate("TechnologiesScreen", {
                                                                 data: dataTech,
-                                                            },
-                                                        );
+                                                                },
+                                                            );
+                                                            break;
+                                                        case 'Back End':
+                                                            navigation.navigate("TechnologiesScreen", {
+                                                                data: dataTech,
+                                                                },
+                                                            );
+                                                            break;
+                                                        case 'Full Stack':
+                                                            navigation.navigate("TechnologiesScreen", {
+                                                                data: dataTech,
+                                                                },
+                                                            );
+                                                            break;
+                                                        case 'Android Разработка':
+                                                            navigation.navigate("TechnologiesScreen", {
+                                                                data: MobileAndroidData,
+                                                                },
+                                                            );
+                                                            break;
+                                                        case 'IOS Разработка':
+                                                            navigation.navigate("TechnologiesScreen", {
+                                                                data: MobileIOSData,
+                                                                },
+                                                            );
+                                                            break;
+                                                        case 'Кроссплатформерная разработка':
+                                                            navigation.navigate("TechnologiesScreen", {
+                                                                data: MobileCrossPlatformData,
+                                                                },
+                                                            );
+                                                            break;
+                                                        case 'Data Science':
+                                                            navigation.navigate("TechnologiesScreen", {
+                                                                data: BigDataDataScientistData,
+                                                                },
+                                                            );
+                                                            break;
+                                                        case 'Data Engineer':
+                                                            navigation.navigate("TechnologiesScreen", {
+                                                                data: BigDataDataEngineerData,
+                                                                },
+                                                            );
+                                                            break;
+                                                        case 'Unity 3D Разработка':
+                                                            navigation.navigate("TechnologiesScreen", {
+                                                                data: GameDevUnityData,
+                                                                },
+                                                            );
+                                                            break;
+                                                        case 'Unreal Engine 4 Разработка':
+                                                            navigation.navigate("TechnologiesScreen", {
+                                                                data: GameDevUE4Data,
+                                                                },
+                                                            );
+                                                            break;
                                                     }
                                                 }
                                                 }

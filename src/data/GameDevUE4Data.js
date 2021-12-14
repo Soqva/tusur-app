@@ -1,6 +1,6 @@
 export default [
     {
-        listElement: 'C#',
+        listElement: 'С++',
     },
     {
         listElement: 'Общие вопросы',

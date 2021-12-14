@@ -32,7 +32,6 @@ export const TechnologiesScreen = ({navigation, route}) => {
                                 style={styles.listElement}
                                 key={listElement}
                                 onPress={() => {
-                                    setCurrentIndex(index === currentIndex ? null : index);
                                     setActive(!active);
                                 }}
                                 activeOpacity={0.8}
@@ -54,44 +53,6 @@ export const TechnologiesScreen = ({navigation, route}) => {
                                     }
                                 </View>
                             </TouchableOpacity>
-                            {index === currentIndex &&
-                            (<View>
-                                    {subListElement.map(subListElement => (
-                                        <View style={styles.subListElement}>
-
-                                            <TouchableOpacity
-                                                key={subListElement}
-                                                activeOpacity={0.8}
-                                                onPress={() => {
-                                                    navigation.navigate("QuestionsScreen", {
-                                                        data: dataQuestions,
-                                                    });
-                                                }
-                                                }
-                                            >
-                                                <View style={styles.listElement}>
-                                                    <Text key={subListElement} style={styles.subListText}>
-                                                        {subListElement}
-                                                    </Text>
-                                                    <View>
-                                                        {active ?
-                                                            <Image
-                                                                style={styles.listIcon}
-                                                                source={arrowIconBright}
-                                                            />
-                                                            :
-                                                            <Image
-                                                                style={styles.listIcon}
-                                                                source={arrowIcon}
-                                                            />
-                                                        }
-                                                    </View>
-                                                </View>
-                                            </TouchableOpacity>
-                                        </View>
-                                    ))}
-                                </View>
-                            )}
                         </View>
                     </View>
                 })}

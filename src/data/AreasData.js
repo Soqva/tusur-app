@@ -1,6 +1,6 @@
 export default [
     {
-        listElement: 'Web Developing',
+        listElement: 'Web Разработка',
         subListElement: [
             'Front End',
             'Back End',
@@ -15,22 +15,18 @@ export default [
         ],
     },
     {
-        listElement: 'Game Developing',
-        subListElement: [],
-    },
-    {
-        listElement: 'Mobile',
-        subListElement: [],
-    },
-    {
-        listElement: 'Desktop',
+        listElement: 'Разработка игр',
         subListElement: [
-            'Front End',
-            'Back End',
-            'Full Stack',
-            'Front End',
-            'Back End',
-            'Full Stack'
+            'Unity 3D Разработка',
+            'Unreal Engine 4 Разработка',
+        ],
+    },
+    {
+        listElement: 'Разработка мобильных приложений',
+        subListElement: [
+            'Android Разработка',
+            'IOS Разработка',
+            'Кроссплатформерная разработка'
         ],
     },
 ];
