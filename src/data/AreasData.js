@@ -26,7 +26,6 @@ export default [
         subListElement: [
             'Android Разработка',
             'IOS Разработка',
-            'Кроссплатформерная разработка'
         ],
     },
 ];

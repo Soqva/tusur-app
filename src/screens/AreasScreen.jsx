@@ -12,7 +12,6 @@ import dataAreas from "../data/AreasData";
 import dataTech from "../data/TechnologiesData";
 import {AppHeader} from "./AppHeader";
 import MobileAndroidData from "../data/MobileAndriodData";
-import MobileCrossPlatformData from "../data/MobileCrossPlatformData";
 import MobileIOSData from "../data/MobileIOSData";
 import BigDataDataEngineerData from "../data/BigDataDataEngineerData";
 import BigDataDataScientistData from "../data/BigDataDataScientistData";
@@ -100,12 +99,6 @@ export const AreasScreen = ({navigation}) => {
                                                         case 'IOS Разработка':
                                                             navigation.navigate("TechnologiesScreen", {
                                                                 data: MobileIOSData,
-                                                                },
-                                                            );
-                                                            break;
-                                                        case 'Кроссплатформерная разработка':
-                                                            navigation.navigate("TechnologiesScreen", {
-                                                                data: MobileCrossPlatformData,
                                                                 },
                                                             );
                                                             break;
