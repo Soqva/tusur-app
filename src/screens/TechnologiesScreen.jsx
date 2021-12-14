@@ -33,6 +33,7 @@ export const TechnologiesScreen = ({navigation, route}) => {
                                 key={listElement}
                                 onPress={() => {
                                     setActive(!active);
+
                                 }}
                                 activeOpacity={0.8}
                             >
