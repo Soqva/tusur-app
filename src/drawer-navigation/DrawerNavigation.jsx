@@ -6,12 +6,14 @@ import {FavoritesScreen} from "../screens/FavoritesScreen";
 import {NotificationsScreen} from "../screens/NotificationsScreen";
 import {ShareScreen} from "../screens/ShareScreen";
 import {SettingsScreen} from "../screens/SettingsScreen";
+import  {CustomDrawerContent} from "./CustomDrawerContent";
 
 const Drawer = createDrawerNavigator();
 
 export const DrawerNavigation = () => {
     return (
         <Drawer.Navigator
+            drawerContent={(props) => <CustomDrawerContent {...props}/>}
             screenOptions={drawerNavigatorScreenOptions}
             initialRouteName="Tasks"
             backBehavior="history">
@@ -46,11 +48,10 @@ export const DrawerNavigation = () => {
 const drawerNavigatorScreenOptions = {
     drawerType: "front",
     drawerStyle: {
-        backgroundColor: "aqua",
-        width: 240,
-    },
-    drawerContentContainerStyle: {
-        backgroundColor: "white"
+        backgroundColor: "#4285F4",
+        width: 270,
     },
     headerShown: false,
 }
+
+
