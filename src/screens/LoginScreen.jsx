@@ -2,7 +2,7 @@ import React from 'react';
 import {Alert, Image, StyleSheet, Text, View, TextInput, Animated, TouchableOpacity, Dimensions} from 'react-native';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
-
+//
 export function LoginScreen({navigation}){
     return(
         <View style={styles.wrapper}>

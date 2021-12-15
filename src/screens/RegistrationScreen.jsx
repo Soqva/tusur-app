@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Image, Text, TextInput, Animated, TouchableOpacity, StyleSheet, Dimensions} from "react-native";
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
-
+//
 export const RegistrationScreen = ({navigation}) => {
     return (
         <View style={styles.wrapper}>

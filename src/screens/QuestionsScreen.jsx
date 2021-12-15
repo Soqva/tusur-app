@@ -40,12 +40,12 @@ export const QuestionsScreen = ({route, navigation}) => {
                             {active ?
                                 <Image
                                     style={[styles.listIcon, {transform: [{ rotate: "0deg" }]}]}
-                                    source={arrowIcon}
+                                    source={arrowIconBright}
                                 />
                                 :
                                 <Image
                                     style={[styles.listIcon, {transform: [{ rotate: "90deg" }]}]}
-                                    source={arrowIconBright}
+                                    source={arrowIcon}
                                 />
                             }
                         </TouchableOpacity>
