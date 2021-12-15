@@ -72,7 +72,11 @@ export const CustomDrawerContent = ({ navigation }) => {
             />
             <DrawerItem
                 style={styles.item}
-                labelStyle={styles.label}
+                labelStyle={{
+                    color: "white",
+                    fontSize: 16,
+                    paddingLeft: 22,
+                }}
                 label="Настройки"
                 icon={({focused, color, size}) => (
                     <Image
@@ -106,7 +110,7 @@ const styles = StyleSheet.create({
     },
     label: {
         color: "white",
-        fontSize: 18,
+        fontSize: 16,
         paddingLeft: 20,
     },
     downItem: {

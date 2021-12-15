@@ -17,7 +17,7 @@ export const QuestionsScreen = ({route, navigation}) => {
 
     return (
         <View>
-            <AppHeader/>
+            <AppHeader navigation={navigation}/>
             <ScrollView>
                 <View style={styles.list}>
                     <View>
