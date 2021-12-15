@@ -9,10 +9,14 @@ import {
     Button,
 } from "react-native";
 import {AppHeader} from "./AppHeader";
+import arrowIcon from "../assets/arrow.png";
+import arrowIconBright from "../assets/arrowBright.png";
+
 
 export const QuestionsScreen = ({route, navigation}) => {
 
     const [currentIndex, setCurrentIndex] = React.useState(null);
+    const [active, setActive] = React.useState(true);
     let index = 0;
 
     return (
@@ -25,12 +29,25 @@ export const QuestionsScreen = ({route, navigation}) => {
                             style={styles.listElement}
                             onPress={() => {
                                 setCurrentIndex(index === currentIndex ? null : index);
+                                setActive(!active);
                             }}
                             activeOpacity={0.8}
                         >
+
                             <Text style={styles.listHeader}>
                                 {route.params.title}
                             </Text>
+                            {active ?
+                                <Image
+                                    style={[styles.listIcon, {transform: [{ rotate: "0deg" }]}]}
+                                    source={arrowIcon}
+                                />
+                                :
+                                <Image
+                                    style={[styles.listIcon, {transform: [{ rotate: "90deg" }]}]}
+                                    source={arrowIconBright}
+                                />
+                            }
                         </TouchableOpacity>
                         {index === currentIndex &&
                         (<View>
@@ -91,5 +108,9 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderStyle: 'solid',
         borderColor: '#D2D4D3',
+    },
+    listIcon: {
+        width: 13,
+        height: 19,
     },
 });

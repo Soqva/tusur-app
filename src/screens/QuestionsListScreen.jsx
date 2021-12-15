@@ -6,18 +6,18 @@ import {
     ScrollView,
     Image,
     TouchableOpacity,
-    Button,
+    Animated,
 } from "react-native";
 import {AppHeader} from "./AppHeader";
+const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
 export const QuestionsListScreen = ({route, navigation}) => {
 
     const arrowIcon = require("../assets/arrow.png");
     const arrowIconBright = require('../assets/arrowBright.png');
     const [currentIndex, setCurrentIndex] = React.useState(null);
-    const [active, setActive] = React.useState(false);
+    const [active, setActive] = React.useState(true);
     const mainColor = '#4285F4';
-
     let data = route.params.data;
 
     return (
@@ -32,26 +32,13 @@ export const QuestionsListScreen = ({route, navigation}) => {
                                 key={listElement}
                                 onPress={() => {
                                     setCurrentIndex(index === currentIndex ? null : index);
-                                    setActive(!active);
+                                    setActive(true);
                                 }}
                                 activeOpacity={0.8}
                             >
                                 <Text style={styles.listHeader}>
                                     {listElement}
                                 </Text>
-                                <View>
-                                    {active ?
-                                        <Image
-                                            style={styles.listIcon}
-                                            source={arrowIconBright}
-                                        />
-                                        :
-                                        <Image
-                                            style={styles.listIcon}
-                                            source={arrowIcon}
-                                        />
-                                    }
-                                </View>
                             </TouchableOpacity>
                             {index === currentIndex &&
                             (<View>
@@ -61,11 +48,7 @@ export const QuestionsListScreen = ({route, navigation}) => {
                                                 <TouchableOpacity
                                                     style={styles.listElement}
                                                     onPress={() => {
-                                                        navigation.navigate("QuestionsScreen", {
-                                                                title: subListElement,
-                                                                answer: answer,
-                                                            },
-                                                        );
+                                                        setActive(!active);
                                                     }
                                                     }
                                                 >
@@ -75,17 +58,31 @@ export const QuestionsListScreen = ({route, navigation}) => {
                                                     <View>
                                                         {active ?
                                                             <Image
-                                                                style={styles.listIcon}
-                                                                source={arrowIconBright}
+                                                                style={[styles.listIcon, {transform: [{ rotate: "0deg" }]}]}
+                                                                source={arrowIcon}
                                                             />
                                                             :
                                                             <Image
-                                                                style={styles.listIcon}
-                                                                source={arrowIcon}
+                                                                style={[styles.listIcon, {transform: [{ rotate: "90deg" }]}]}
+                                                                source={arrowIconBright}
                                                             />
                                                         }
                                                     </View>
                                                 </TouchableOpacity>
+                                                <View>
+                                                    { active ?
+                                                        <View></View>
+                                                        :
+                                                        <AnimatedTouchable style={styles.button} onPress={() => {
+                                                            navigation.navigate("QuestionsScreen", {
+                                                                title: subListElement,
+                                                                answer: answer,
+                                                            },);
+                                                        }}>
+                                                            <Text style={styles.text}>Перейти к вопросу</Text>
+                                                        </AnimatedTouchable>
+                                                }
+                                                </View>
                                             </View>
                                         </View>
                                     ))}
@@ -155,5 +152,19 @@ const styles = StyleSheet.create({
     subListButton: {
         // ????
         width: '60%',
-    }
+    },
+    button: {
+        borderColor: '#D2D4D3',
+        backgroundColor: '#4285F4',
+        borderWidth: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 45,
+        width: 300,
+        marginTop: 20,
+    },
+    text: {
+        fontSize: 16,
+        color: 'white',
+    },
 });

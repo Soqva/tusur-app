@@ -1,5 +1,5 @@
 import React from 'react';
-import {Alert, Image, StyleSheet, Text, View, TextInput, Animated, TouchableOpacity} from 'react-native';
+import {Alert, Image, StyleSheet, Text, View, TextInput, Animated, TouchableOpacity, Dimensions} from 'react-native';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
@@ -34,8 +34,11 @@ export function LoginScreen({navigation}){
             </View>
 
             <View>
-                <AnimatedTouchable style={styles.buttonViaGoogle} onPress={() => Alert.alert('Google')}>
-                    <Text style={styles.text}>Войти через Google</Text>
+                <AnimatedTouchable style={styles.buttonViaGoogle} onPress={() => navigation.reset({
+                    index: 0,
+                    routes: [{name: 'DrawerNavigationRoutes'}]
+                })}>
+                    <Text style={styles.text}>Войти</Text>
                 </AnimatedTouchable>
 
                 <AnimatedTouchable style={styles.buttonViaTusur} onPress={() => Alert.alert('TUSUR')}>
@@ -52,8 +55,8 @@ export function LoginScreen({navigation}){
 
 const styles = StyleSheet.create({
     wrapper: {
-        width: '100%',
-        height: '100%',
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height,
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -70,7 +73,7 @@ const styles = StyleSheet.create({
 
     text: {
         color: '#D2D4D3',
-//        fontSize: 14,
+        fontSize: 14,
     },
 
     separator: {
@@ -97,7 +100,6 @@ const styles = StyleSheet.create({
         width: 280,
         height: 55,
         backgroundColor: '#4285F4',
-        padding: 20,
         marginBottom: 23,
     },
 
@@ -107,7 +109,6 @@ const styles = StyleSheet.create({
         width: 280,
         height: 55,
         backgroundColor: '#D2D4D3',
-        padding: 20,
         marginBottom: 10,
     },
 
@@ -116,9 +117,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         width: 280,
         height: 55,
-        padding: 20,
-//        borderColor: '#000000',
-//        borderWidth: 1,
         marginBottom: 23,
     }
 });

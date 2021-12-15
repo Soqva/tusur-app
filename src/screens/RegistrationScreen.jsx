@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, Text, TextInput,Animated, TouchableOpacity, StyleSheet} from "react-native";
+import {View, Image, Text, TextInput, Animated, TouchableOpacity, StyleSheet, Dimensions} from "react-native";
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
 export const RegistrationScreen = ({navigation}) => {
@@ -14,8 +14,8 @@ export const RegistrationScreen = ({navigation}) => {
             <View>
                 <TextInput style={styles.textField} placeholder="Логин"/>
                 <TextInput style={styles.textField} placeholder="Почта"/>
-                <TextInput style={styles.textField} placeholder="Пароль"/>
-                <TextInput style={styles.textField} placeholder="Повторите пароль"/>
+                <TextInput style={styles.textField} placeholder="Пароль" secureTextEntry={true}/>
+                <TextInput style={styles.textField} placeholder="Повторите пароль" secureTextEntry={true}/>
                 <AnimatedTouchable style={styles.button} onPress={() => navigation.reset({
                     index: 0,
                     routes: [{name: 'DrawerNavigationRoutes'}]
@@ -29,7 +29,10 @@ export const RegistrationScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
     wrapper: {
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height,
         alignItems: 'center',
+        justifyContent: 'center',
     },
     avatarContainer: {
         paddingTop: 60,
