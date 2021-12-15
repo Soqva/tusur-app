@@ -211,7 +211,6 @@ const styles = StyleSheet.create({
         flexGrow: 1,
         flexDirection: 'row',
         height: 68,
-        width: '100%',
         justifyContent: 'space-between',
         alignItems: 'flex-end',
         paddingRight: 165,

@@ -17,6 +17,9 @@ import BigDataDataScientistData from "../data/BigDataDataScientistData";
 import GameDevComputerGraphicsData from "../data/GameDevComputerGraphicsData";
 import GameDevUnityData from "../data/GameDevUnityData";
 import GameDevUE4Data from "../data/GameDevUE4Data";
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
 
 export const AreasScreen = ({navigation}) => {
 
@@ -189,7 +192,6 @@ const styles = StyleSheet.create({
         flexGrow: 1,
         flexDirection: 'row',
         height: 68,
-        width: '100%',
         justifyContent: 'space-between',
         alignItems: 'flex-end',
         paddingRight: 165,
